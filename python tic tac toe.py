@@ -1,4 +1,5 @@
 # Programmed and tested for bugs by Tanjim Mahbub
+# Tested for bugs by other people and fixed
 from random import randrange
 
 def display_board(board):
