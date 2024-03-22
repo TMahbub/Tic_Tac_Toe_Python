@@ -8,5 +8,5 @@ How to run:
 
 Enjoy
 
-![How to play](https://i.ibb.co/LJknGpM/image.png)
+
 ![image](https://i.ibb.co/TtcbgFm/image.png)
