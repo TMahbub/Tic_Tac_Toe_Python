@@ -129,7 +129,7 @@ def play_game(board):
 while True:
     board = [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ]
     play_game(board)
-    x = int(input("Press 1 + Enter to exit. \nPress 2 + Enter to play again."))
+    x = int(input("\nEnter 1 to exit\nor\nEnter 2 to play again: "))
     if x == 1:
         os.system('cls')
         break
