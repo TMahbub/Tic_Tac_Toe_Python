@@ -1,7 +1,16 @@
 # Programmed and tested for bugs by Tanjim Mahbub
 # Tested for bugs by other people and fixed
 from random import randrange
+import time
+import os
 
+print('''Simple Tic Tac Toe game using basic python.
+Choose the number of the box you want to input zero(O)
+And the computer will respond with a X
+Enjoy
+
+Author: Tanjim Mahbub
+''')
 def display_board(board):
     print("+"+("-------+" * 3 ))
     print("|"+("       |" * 3 ))
@@ -61,30 +70,25 @@ def draw_move(free):
     
 
 def victory_for(board):
-    #win = None
     
     if board[0][0] == board[0][1] == board[0][2]:
         win = board[0][0]
-            #break
     elif board[1][0] == board[1][1] == board[1][2]:
         win = board[1][0]
-    #        break
     elif board[2][0] == board[2][1] == board[2][2]:
         win = board[2][0] # row done
-    #        break
+    
     elif board[0][0] == board[1][0] == board[2][0]:
         win = board[0][0]
-    #        break
     elif board[0][1] == board[1][1] == board[2][1]:
         win = board[0][1]
-    #        break
     elif board[0][2] == board[1][2] == board[2][2]:
         win = board[0][2] # column done
-    #        break   
+    
     elif board[0][0] == board[1][1] == board[2][2]:
         win = board[1][1]
     elif board[0][2] == board[1][1] == board[2][0]:
-        win = board[1][1]
+        win = board[1][1] # corners done
         
     else:
         win = 0
@@ -101,10 +105,8 @@ def play_game(board):
         if win != 0:
             break
         free = make_list_of_free_fields(board)
-        #print("Free box =",free, "\nlength =", len(free))
         if len(free) == 0:
             win = 'draw'
-            print("Draw")
             break
         draw_move(free)
         display_board(board)
@@ -112,29 +114,39 @@ def play_game(board):
         if win != 0:
             break
         free = make_list_of_free_fields(board)
-        #print("free box =",free, "\nlength =", len(free))
         if (len(free) == 0):
             win = 'draw'
             break
-        #else:
-        #    win = victory_for(board)
-        #win = victory_for(board)
-        #if win != 0:
-        #    break
-    
     if win == 'X':
         print("Computer won !!!")
-    #        break
     elif win == 'O':
         print("You won !!!")
-    #        break
     elif win == 'draw':
         print("Draw !!!")
-    #        break
-        #else:
-        #    continue
     
 
     
-board = [ [1, 2, 3], [4, 'X', 6], [7, 8, 9] ]
-play_game(board)
+while True:
+    board = [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ]
+    play_game(board)
+    x = int(input("Press 1 + Enter to exit. \nPress 2 + Enter to play again."))
+    if x == 1:
+        os.system('cls')
+        break
+    elif x == 2:
+        os.system('cls')
+    else:
+        print("Plase input 1 or 2.")
+
+print("Closing in \n5..")
+time.sleep(1)
+print("4..")
+time.sleep(1)
+print("3..")
+time.sleep(1)
+print("2..")
+time.sleep(1)
+print("1..")
+time.sleep(1)
+print("Closing...")
+time.sleep(0.5) 
